@@ -3,8 +3,5 @@
     "env": {
       "NODE_VERSION": "20"
     }
-  },
-  "scripts": {
-    "build": "next build"
   }
 }
