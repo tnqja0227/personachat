@@ -41,8 +41,10 @@ function WelcomeScreen() {
           <div className="mt-4">
              <SidebarTrigger asChild>
                 <Button>
+                  <>
                     <Menu className="mr-2"/>
                     Select a Character
+                  </>
                 </Button>
             </SidebarTrigger>
           </div>
