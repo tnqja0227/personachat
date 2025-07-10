@@ -9,6 +9,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { SendHorizontal } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Skeleton } from '@/components/ui/skeleton';
+import { SidebarTrigger, useSidebar } from './ui/sidebar';
 
 interface ChatInterfaceProps {
   character: Character;
@@ -28,6 +29,7 @@ export function ChatInterface({
   onSubmit,
 }: ChatInterfaceProps) {
   const messagesEndRef = React.useRef<HTMLDivElement>(null);
+  const { isMobile } = useSidebar();
 
   React.useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -36,6 +38,7 @@ export function ChatInterface({
   return (
     <div className="flex h-full flex-col">
       <header className="flex items-center gap-4 border-b bg-card p-4">
+        {isMobile && <SidebarTrigger />}
         <Avatar className="h-10 w-10">
           <AvatarImage src={character.avatar} alt={character.name} data-ai-hint="avatar portrait" />
           <AvatarFallback>{character.name.charAt(0)}</AvatarFallback>
