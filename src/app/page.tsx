@@ -39,14 +39,14 @@ function WelcomeScreen() {
         </p>
         {isMobile && (
           <div className="mt-4">
-             <SidebarTrigger asChild>
-                <Button>
+             <Button>
+                <SidebarTrigger>
                   <>
                     <Menu className="mr-2"/>
                     Select a Character
                   </>
-                </Button>
-            </SidebarTrigger>
+                </SidebarTrigger>
+            </Button>
           </div>
         )}
       </div>
