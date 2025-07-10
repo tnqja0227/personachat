@@ -2,9 +2,10 @@
 
 import { generateCharacterResponse } from '@/ai/flows/generate-character-response';
 import type { Message } from '@/lib/types';
+import type { Character } from '@/lib/types';
 
 export async function getAiResponse(
-  characterDescription: string,
+  character: Character,
   userMessage: string,
   chatHistory: Message[]
 ): Promise<string> {
@@ -14,7 +15,8 @@ export async function getAiResponse(
       .join('\n');
       
     const result = await generateCharacterResponse({
-      characterDescription,
+      characterName: character.name,
+      characterBackstory: character.backstory,
       userMessage,
       chatHistory: historyString,
     });

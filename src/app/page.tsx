@@ -41,7 +41,7 @@ export default function Home() {
 
     try {
       const aiResponseText = await getAiResponse(
-        selectedCharacter.backstory,
+        selectedCharacter,
         userInput,
         [...messages, userMessage]
       );
